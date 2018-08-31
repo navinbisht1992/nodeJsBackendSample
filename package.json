@@ -1,7 +1,7 @@
 {
   "name": "fresher-guide",
   "version": "0.0.1",
-  "description": "shoping",
+  "description": "A guide for freshers",
   "main": "app.js",
   "scripts": {
     "test": "mocha test",

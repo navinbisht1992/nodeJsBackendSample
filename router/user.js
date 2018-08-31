@@ -11,25 +11,31 @@ module.exports = {
 
     getDetail: async (req, res, next) => {
 
+        // Check if request consists `error` or not
         if( _.get(req, ['error', 'isError'], false) ) {
             return next();
         }
 
+        // Fetch `input` from request
         let body          = _.get(req, ['body'], {});
+        // Extracting `email` and `id` from `body` using destructuring
         let { email, id } = body;
 
         try {
+            // Fetching user details from database
             let userDetails   = await DB.getDetail(email, id);
-        
+            // Set userDetails in request for `next` function
             _.set(req, ['response', 'statusCode'], 200);
             _.set(req, ['response', 'data'], userDetails);
         }
         catch( error ) {
+            // Set `error` to `true`
             _.set(req, ['error', 'statusCode'], 400);
             _.set(req, ['error', 'data'], error);
             _.set(req, ['error', 'isError'], true);
         }
         finally {
+            // Call next function
             return next();
         }
 

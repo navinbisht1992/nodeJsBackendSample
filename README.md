@@ -106,3 +106,17 @@ Issues related to application can be submitted here https://github.com/navinbish
  ```
  forever stop app.js
  ```
+
+### File significance
+ - `config/logger.js`: Configuration related to logs and managing logs behavior is kept here.
+ - `config/sql.js`: Configuration related to the database and connection settings is done here. This single file is like a gateway to any database connection and query.
+ - `lib/db.js`: Using connection from `config/sql.js` makes SQL query like `select`, `update`, `insert`, `delete`, etc.
+ - `lib/index.js`: Act as a gateway for all the custom libraries in `lib`
+ - `logger/server.log`: All the logs are stored here.
+ - `node_modules`: npm puts various things on your computer. That's its job. This document will tell you what it puts where. Packages are dropped into the node_modules folder under the prefix. When installing locally, this means that you can require("packagename") to load its main module, or require "packagename/lib/path/to/sub/module") to load other modules. Read more here: https://docs.npmjs.com/files/folders
+ - `router/iindex.js`: Routing refers to how an application’s endpoints (URIs) respond to client requests. For an introduction to routing, see Basic routing. You define routing using methods of the Express app object that correspond to HTTP methods; for example, app.get() to handle GET requests and app.post to handle POST requests. All the API's are written here and act as a central router to all other functions. Read more here: https://expressjs.com/en/guide/routing.html
+ - `router/service.js`: All the genral functions are here, like sending response, logging api info, API validation and authorization
+ - `router/user.js`: All the functionality related to user is here.
+ - `.gitignore`: A gitignore file specifies intentionally untracked files that Git should ignore. Files already tracked by Git are not affected. Read more here: https://git-scm.com/docs/gitignore
+ - `app.js`: This file start application and setup application
+ - `package-lock.json`: `package-lock.json` is automatically generated for any operations where npm modifies either the `node_modules` tree, or `package.json`. It describes the exact tree that was generated, such that subsequent installs are able to generate identical trees, regardless of intermediate dependency updates. Read more here: https://docs.npmjs.com/files/package-lock.json
