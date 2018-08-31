@@ -1,0 +1,41 @@
+{
+  "name": "fresher-guide",
+  "version": "0.0.1",
+  "description": "shoping",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha test",
+    "start": "PORT='1618' node app",
+    "foreverstart": "forever start app.js",
+    "stop": "forever stop app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/navinbisht1992/nodeJsBackendSample.git"
+  },
+  "keywords": [
+    "promise",
+    "async",
+    "await",
+    "const",
+    "let",
+    "require",
+    "module",
+    "exports"
+  ],
+  "author": "navin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/navinbisht1992/nodeJsBackendSample/issues"
+  },
+  "homepage": "https://github.com/navinbisht1992/nodeJsBackendSample#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "forever-monitor": "^1.7.1",
+    "lodash": "^4.17.10",
+    "mysql": "^2.16.0",
+    "simple-node-logger": "^0.93.37"
+  }
+}
